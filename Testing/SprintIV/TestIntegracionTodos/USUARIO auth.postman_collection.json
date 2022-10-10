@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "88b04615-3130-4dac-ba53-024d68899351",
+		"name": "USUARIO auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21483001"
+	},
+	"item": [
+		{
+			"name": "Reserva",
+			"item": [
+				{
+					"name": "Guardar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test para chequear el body de respuesta\", () => {\r",
+									"\t  const responseJson = pm.response.json();\r",
+									"\t  pm.expect(responseJson.horaInicio).to.be.a(\"string\");\r",
+									"      pm.expect(responseJson.fechaFin).to.be.a(\"string\");\r",
+									"\t  pm.expect(responseJson.fechaInicio).to.be.a(\"string\");\r",
+									"      pm.expect(responseJson.producto).to.be.a(\"object\");\r",
+									"      pm.expect(responseJson.usuario).to.be.a(\"object\");\r",
+									"});\r",
+									"pm.test(\"El id no puede ser null\", ()=> {\r",
+									"\t      const responseJson = pm.response.json();\r",
+									"\t      pm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c3VhcmlvQHRlc3QuY29tIiwiYXBlbGxpZG8iOiJBcGVsbGlkbyBVc3VhcmlvVEVTVCIsIm5vbWJyZSI6Im5vbWJyZSBVc3VhcmlvVEVTVCIsImlhdCI6MTY2MzczMDY2OSwiZXhwIjoxNjYzNzM0MjY5fQ.FclbMe2IpPx_67VftRxHsnEFPg2g3txPdrNO8sWU96NtOhTXxFnrWeoxEZraDy6AIbmDAQSP0GM0lyqIr5suag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"horaInicio\": \"13:30\",\r\n    \"fechaFin\": \"30-01-2025\",\r\n    \"fechaInicio\": \"15-01-2025\",\r\n    \"producto\": {\r\n        \"id\": 1,\r\n        \"titulo\": \"AUDI R8 SPYDER V10\",\r\n        \"descripcion\": \"Siente más con la indescriptible experiencia de conducir a cielo abierto mientras escuchas la sinfonía de su poderoso motor. Es un vehículo de look deportivo y aún así amigable con el medio ambiente.\",\r\n        \"imagen\": [],\r\n        \"caracteristica\": [],\r\n        \"politica\": [],\r\n        \"ciudad\": {\r\n            \"id\": 1,\r\n            \"localidad\": \"CABA\",\r\n            \"provincia\": \"CABA\"\r\n        },\r\n        \"categoria\": {\r\n            \"id\": 1,\r\n            \"titulo\": \"Deportivos\",\r\n            \"descripcion\": \"Autos de ruta y ciudad\",\r\n            \"imagenCategoria\": {\r\n                \"id\": 1,\r\n                \"titulo\": \"deportivos\",\r\n                \"urlImg\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/previewCategorias/deportivos.png\"\r\n            }\r\n        }\r\n    },\r\n    \"usuario\": {\r\n                \"id\": 11,\r\n                \"nombre\": \"nombre UsuarioTEST\",\r\n                \"apellido\": \"Apellido UsuarioTEST\",\r\n                \"email\": \"usuario@test.com\",\r\n                \"contrasenia\": \"test\",\r\n                \"rol\": {\r\n                    \"id\": 2,\r\n                    \"nombre\": \"USUARIO\"\r\n                }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/reserva/guardar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"reserva",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

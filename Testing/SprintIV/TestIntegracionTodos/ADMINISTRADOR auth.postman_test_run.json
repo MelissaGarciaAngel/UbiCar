@@ -1,0 +1,648 @@
+{
+	"id": "2305668c-8e5c-4fe1-adeb-6a103afea055",
+	"name": "ADMINISTRADOR auth",
+	"timestamp": "2022-09-21T04:36:48.661Z",
+	"collection_id": "21483001-5252a5ea-f7a2-44f0-8429-878d2094f050",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 30,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "2f399f57-ea6a-4821-b9d9-9d027045a964",
+			"name": "Guardar",
+			"url": "http://18.223.117.95:8080/producto/guardar",
+			"time": 1017,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado ok": true,
+				"Post de producto requiere body": true,
+				"Post de producto (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado ok": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto requiere body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1017
+			],
+			"allTests": [
+				{
+					"Verifica el estado ok": true,
+					"Post de producto requiere body": true,
+					"Post de producto (el id no puede ser null)": true
+				}
+			]
+		},
+		{
+			"id": "c5fb4fca-7409-4dd6-a26e-f9901a96030d",
+			"name": "Eliminar",
+			"url": "http://18.223.117.95:8080/producto/61",
+			"time": 241,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				241
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true
+				}
+			]
+		},
+		{
+			"id": "5f5273af-4a2d-434a-94f3-db6fd44a419e",
+			"name": "Eliminar ID inexistente",
+			"url": "http://18.223.117.95:8080/producto/100",
+			"time": 202,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede eliminar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede eliminar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"No se puede eliminar id inexistente": true
+				}
+			]
+		},
+		{
+			"id": "0a9eba3d-b7ae-48bf-8d30-c6447ba46ac6",
+			"name": "Modificar",
+			"url": "http://18.223.117.95:8080/producto/49",
+			"time": 215,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Se modificó (no retorna nada)": true
+			},
+			"testPassFailCounts": {
+				"Se modificó (no retorna nada)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				215
+			],
+			"allTests": [
+				{
+					"Se modificó (no retorna nada)": true
+				}
+			]
+		},
+		{
+			"id": "72f3fef8-5958-491e-8c61-51394cae0758",
+			"name": "Listar modificado",
+			"url": "http://18.223.117.95:8080/producto/49",
+			"time": 218,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				"Se trae correctamente el id pedido": true,
+				"El campo modificado coincide ": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El campo modificado coincide ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				218
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					"Se trae correctamente el id pedido": true,
+					"El campo modificado coincide ": true
+				}
+			]
+		},
+		{
+			"id": "bad81624-519b-466e-95ff-78dae415529d",
+			"name": "Modificar ID inexistente",
+			"url": "http://18.223.117.95:8080/producto/100",
+			"time": 283,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede modificar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede modificar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				283
+			],
+			"allTests": [
+				{
+					"No se puede modificar id inexistente": true
+				}
+			]
+		},
+		{
+			"id": "160c3dbe-be03-4aa4-8291-f2e48a643037",
+			"name": "Guardar",
+			"url": "http://18.223.117.95:8080/categoria/guardar",
+			"time": 226,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Estado 200": true,
+				"Post de categorias (requiere body)": true,
+				"Post de categorias (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Estado 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de categorias (requiere body)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de categorias (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				226
+			],
+			"allTests": [
+				{
+					"Estado 200": true,
+					"Post de categorias (requiere body)": true,
+					"Post de categorias (el id no puede ser null)": true
+				}
+			]
+		},
+		{
+			"id": "ef5f8513-d346-47e9-a923-a538b0cd6eab",
+			"name": "Modificar",
+			"url": "http://18.223.117.95:8080/categoria/15",
+			"time": 335,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Se modificó (no retorna nada)": true
+			},
+			"testPassFailCounts": {
+				"Se modificó (no retorna nada)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				335
+			],
+			"allTests": [
+				{
+					"Se modificó (no retorna nada)": true
+				}
+			]
+		},
+		{
+			"id": "789f309f-00c2-417b-8425-fc10b641faa7",
+			"name": "Listar modificado",
+			"url": "http://18.223.117.95:8080/categoria/15",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				"Se trae correctamente el id pedido": true,
+				"El campo modificado coincide ": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El campo modificado coincide ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				205
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					"Se trae correctamente el id pedido": true,
+					"El campo modificado coincide ": true
+				}
+			]
+		},
+		{
+			"id": "93b46023-09d4-43ff-8bb6-bfbfc9af1b72",
+			"name": "Modificar id inexistente",
+			"url": "http://18.223.117.95:8080/categoria/100",
+			"time": 222,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede modificar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede modificar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				222
+			],
+			"allTests": [
+				{
+					"No se puede modificar id inexistente": true
+				}
+			]
+		},
+		{
+			"id": "6d4a6c13-9c62-4031-a976-57434d7989bf",
+			"name": "Eliminar",
+			"url": "http://18.223.117.95:8080/categoria/15",
+			"time": 227,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				227
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true
+				}
+			]
+		},
+		{
+			"id": "c326b189-e294-4bb4-8922-c3b922ff8d82",
+			"name": "Eliminar id inexistente",
+			"url": "http://18.223.117.95:8080/categoria/100",
+			"time": 215,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede eliminar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede eliminar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				215
+			],
+			"allTests": [
+				{
+					"No se puede eliminar id inexistente": true
+				}
+			]
+		},
+		{
+			"id": "6737620a-ad65-4163-8b42-bb00a7bd7573",
+			"name": "Guardar",
+			"url": "http://18.223.117.95:8080/rol/guardar",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado ok": true,
+				"Post de producto requiere body": true,
+				"Post de producto (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado ok": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto requiere body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				205
+			],
+			"allTests": [
+				{
+					"Verifica el estado ok": true,
+					"Post de producto requiere body": true,
+					"Post de producto (el id no puede ser null)": true
+				}
+			]
+		},
+		{
+			"id": "0aa388b5-2f16-4d14-83e9-ab4f6b21a609",
+			"name": "Modificar rol",
+			"url": "http://18.223.117.95:8080/rol/8",
+			"time": 210,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Se modificó (no retorna nada)": true
+			},
+			"testPassFailCounts": {
+				"Se modificó (no retorna nada)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				210
+			],
+			"allTests": [
+				{
+					"Se modificó (no retorna nada)": true
+				}
+			]
+		},
+		{
+			"id": "0c9a0212-8b47-4da9-b2c9-d647c8559a3c",
+			"name": "Eliminar",
+			"url": "http://18.223.117.95:8080/rol/8",
+			"time": 203,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				203
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true
+				}
+			]
+		},
+		{
+			"id": "0e720dc6-694e-4367-ab4f-30f6a4fd179b",
+			"name": "Modificar usuario",
+			"url": "http://18.223.117.95:8080/usuario/14",
+			"time": 417,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Se modificó (no retorna nada)": true
+			},
+			"testPassFailCounts": {
+				"Se modificó (no retorna nada)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				417
+			],
+			"allTests": [
+				{
+					"Se modificó (no retorna nada)": true
+				}
+			]
+		},
+		{
+			"id": "33c1a93c-0c98-46e6-8ef1-e6cac5f485e6",
+			"name": "Eliminar Usuario",
+			"url": "http://18.223.117.95:8080/usuario/14",
+			"time": 207,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				207
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true
+				}
+			]
+		},
+		{
+			"id": "ec9ce703-36f6-483a-b9be-0537d77521cd",
+			"name": "Guardar ciudad",
+			"url": "http://18.223.117.95:8080/ciudad",
+			"time": 211,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Estado 200": true,
+				"Post de categorias (requiere body)": true,
+				"Post de categorias (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Estado 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de categorias (requiere body)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de categorias (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				211
+			],
+			"allTests": [
+				{
+					"Estado 200": true,
+					"Post de categorias (requiere body)": true,
+					"Post de categorias (el id no puede ser null)": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 5059,
+	"collection": {
+		"requests": [
+			{
+				"id": "2f399f57-ea6a-4821-b9d9-9d027045a964",
+				"method": "POST"
+			},
+			{
+				"id": "c5fb4fca-7409-4dd6-a26e-f9901a96030d",
+				"method": "DELETE"
+			},
+			{
+				"id": "5f5273af-4a2d-434a-94f3-db6fd44a419e",
+				"method": "DELETE"
+			},
+			{
+				"id": "0a9eba3d-b7ae-48bf-8d30-c6447ba46ac6",
+				"method": "PUT"
+			},
+			{
+				"id": "72f3fef8-5958-491e-8c61-51394cae0758",
+				"method": "GET"
+			},
+			{
+				"id": "bad81624-519b-466e-95ff-78dae415529d",
+				"method": "PUT"
+			},
+			{
+				"id": "160c3dbe-be03-4aa4-8291-f2e48a643037",
+				"method": "POST"
+			},
+			{
+				"id": "ef5f8513-d346-47e9-a923-a538b0cd6eab",
+				"method": "PUT"
+			},
+			{
+				"id": "789f309f-00c2-417b-8425-fc10b641faa7",
+				"method": "GET"
+			},
+			{
+				"id": "93b46023-09d4-43ff-8bb6-bfbfc9af1b72",
+				"method": "PUT"
+			},
+			{
+				"id": "6d4a6c13-9c62-4031-a976-57434d7989bf",
+				"method": "DELETE"
+			},
+			{
+				"id": "c326b189-e294-4bb4-8922-c3b922ff8d82",
+				"method": "DELETE"
+			},
+			{
+				"id": "6737620a-ad65-4163-8b42-bb00a7bd7573",
+				"method": "POST"
+			},
+			{
+				"id": "0aa388b5-2f16-4d14-83e9-ab4f6b21a609",
+				"method": "PUT"
+			},
+			{
+				"id": "0c9a0212-8b47-4da9-b2c9-d647c8559a3c",
+				"method": "DELETE"
+			},
+			{
+				"id": "0e720dc6-694e-4367-ab4f-30f6a4fd179b",
+				"method": "PUT"
+			},
+			{
+				"id": "33c1a93c-0c98-46e6-8ef1-e6cac5f485e6",
+				"method": "DELETE"
+			},
+			{
+				"id": "ec9ce703-36f6-483a-b9be-0537d77521cd",
+				"method": "POST"
+			}
+		]
+	}
+}

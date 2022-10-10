@@ -1,0 +1,55 @@
+{
+	"id": "72cd49da-03a8-4dde-81e5-b10e78423065",
+	"name": "USUARIO auth",
+	"timestamp": "2022-09-21T03:34:35.767Z",
+	"collection_id": "21483001-88b04615-3130-4dac-ba53-024d68899351",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 2,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d2d780d1-af4b-469c-8f57-8f29f385df4d",
+			"name": "Guardar",
+			"url": "http://18.223.117.95:8080/reserva/guardar",
+			"time": 1912,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test para chequear el body de respuesta": true,
+				"El id no puede ser null": true
+			},
+			"testPassFailCounts": {
+				"Test para chequear el body de respuesta": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El id no puede ser null": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1912
+			],
+			"allTests": [
+				{
+					"Test para chequear el body de respuesta": true,
+					"El id no puede ser null": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1912,
+	"collection": {
+		"requests": [
+			{
+				"id": "d2d780d1-af4b-469c-8f57-8f29f385df4d",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,1064 @@
+{
+	"info": {
+		"_postman_id": "5252a5ea-f7a2-44f0-8429-878d2094f050",
+		"name": "ADMINISTRADOR auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21483001"
+	},
+	"item": [
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Guardar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Post de producto requiere body\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.titulo).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.descripcion).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.imagen).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.caracteristica).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.politica).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.ciudad.id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson.categoria.id).to.be.a(\"number\");\r",
+									"});\r",
+									"pm.test(\"Post de producto (el id no puede ser null)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI2NDMsImV4cCI6MTY2MzczNjI0M30.TZ_sC7SD9hKKdsQD5dDSOCskSHjeJpIOMTvOZjGRimRrVqS8GmSUcBANmLQegd_qMS59vlGR37pMfemlWFvjsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"tituloTEST\",\r\n    \"descripcion\": \"descripcionTEST\",\r\n    \"imagen\": [\r\n        {\r\n            \"id\": 5,\r\n            \"titulo\": \"AudiR8SpyderV10\",\r\n            \"urlImg\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/imagenesCarros/deportivos/AudiR8SpyderV10.png\"\r\n        },\r\n        {\r\n            \"id\": 37,\r\n            \"titulo\": \"zInteriorDeportivo1\",\r\n            \"urlImg\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/imagenesCarros/deportivos/zInteriorDeportivo1.png\"\r\n        }\r\n    ],\r\n    \"caracteristica\": [\r\n        {\r\n            \"id\": 3,\r\n            \"nombre\": \"Plazas\",\r\n            \"icono\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/icon/people.svg\",\r\n            \"valor\": \"2\"\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"nombre\": \"Puertas\",\r\n            \"icono\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/icon/box-arrow-right.svg\",\r\n            \"valor\": \"2\"\r\n        }\r\n    ],\r\n    \"politica\": [],\r\n    \"ciudad\": {\r\n        \"id\": 1,\r\n        \"localidad\": \"CABA\",\r\n        \"provincia\": \"CABA\",\r\n        \"direccion\": \"Federico García Lorca 350, C1405AHD CABA\"\r\n    },\r\n    \"categoria\": {\r\n        \"id\": 1,\r\n        \"titulo\": \"Deportivos\",\r\n        \"descripcion\": \"Autos de ruta y ciudad\",\r\n        \"imagenCategoria\": {\r\n            \"id\": 1,\r\n            \"titulo\": \"deportivos\",\r\n            \"urlImg\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/previewCategorias/deportivos.png\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/guardar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Respuesta exitosa\", function(){\r",
+									"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI2NDMsImV4cCI6MTY2MzczNjI0M30.TZ_sC7SD9hKKdsQD5dDSOCskSHjeJpIOMTvOZjGRimRrVqS8GmSUcBANmLQegd_qMS59vlGR37pMfemlWFvjsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/61",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar ID inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No se puede eliminar id inexistente\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([404]);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI2NDMsImV4cCI6MTY2MzczNjI0M30.TZ_sC7SD9hKKdsQD5dDSOCskSHjeJpIOMTvOZjGRimRrVqS8GmSUcBANmLQegd_qMS59vlGR37pMfemlWFvjsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/100",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Se modificó (no retorna nada)\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI2NDMsImV4cCI6MTY2MzczNjI0M30.TZ_sC7SD9hKKdsQD5dDSOCskSHjeJpIOMTvOZjGRimRrVqS8GmSUcBANmLQegd_qMS59vlGR37pMfemlWFvjsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\": 49,\r\n    \"titulo\": \"tituloMODIFICADOTEST\",\r\n    \"descripcion\": \"descrip2MODIFICADATEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/49",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar modificado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\"Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(49);\r",
+									"});\r",
+									"pm.test(\"El campo modificado coincide \", function(){\r",
+									"        const responseJson = pm.response.json();\r",
+									"        pm.expect(responseJson.descripcion).to.eql(\"descrip2MODIFICADATEST\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI2NDMsImV4cCI6MTY2MzczNjI0M30.TZ_sC7SD9hKKdsQD5dDSOCskSHjeJpIOMTvOZjGRimRrVqS8GmSUcBANmLQegd_qMS59vlGR37pMfemlWFvjsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/49",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar ID inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No se puede modificar id inexistente\", function(){\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI2NDMsImV4cCI6MTY2MzczNjI0M30.TZ_sC7SD9hKKdsQD5dDSOCskSHjeJpIOMTvOZjGRimRrVqS8GmSUcBANmLQegd_qMS59vlGR37pMfemlWFvjsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\": \"100\",\r\n    \"titulo\": \"tituloMODIFICADOTEST\",\r\n    \"descripcion\": \"descripcionMODIFICADATEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/100",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzE2NTMsImV4cCI6MTY2MzczNTI1M30.IgR4FWfYAGkgKfaW_g5YIKx5IspyX66nsJ9M68VGQdgNyo_-eOHYeVXxotDCeHgChK1m57kNsCGo309eitvCBw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Guardar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Estado 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Post de categorias (requiere body)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson.Categoria.titulo).to.be.a(\"string\");\t\r",
+									"    pm.expect(responseJson.Categoria.descripcion).to.be.a(\"string\");\r",
+									"\tpm.expect(responseJson.Categoria.imagenCategoria.id).to.be.a(\"number\");\r",
+									"});\r",
+									"pm.test(\"Post de categorias (el id no puede ser null)\", function(){\r",
+									"    const responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson.Categoria.id).to.be.a(\"number\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"titulo\": \"CategoriaTEST\",\r\n    \"descripcion\": \"DescripcionTEST\",\r\n    \"imagenCategoria\": {\r\n                        \"id\": 1,\r\n                        \"titulo\": \"deportivos\",\r\n                        \"urlImg\": \"https://ubicarbd.s3.us-east-2.amazonaws.com/previewCategorias/deportivos.png\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/guardar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Se modificó (no retorna nada)\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"titulo\": \"ModificadoTEST\", \r\n    \"descripcion\": \"ModificadoTEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/15",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar modificado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\"Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(15);\r",
+									"});\r",
+									"pm.test(\"El campo modificado coincide \", function(){\r",
+									"        const responseJson = pm.response.json();\r",
+									"        pm.expect(responseJson.descripcion).to.eql(\"ModificadoTEST\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/15",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar id inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No se puede modificar id inexistente\", function(){\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"titulo\": \"titulo100\", \r\n    \"descripcion\": \"modificado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/100",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Respuesta exitosa\", function(){\r",
+									"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/15",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar id inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No se puede eliminar id inexistente\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([404]);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/100",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rol",
+			"item": [
+				{
+					"name": "Guardar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Post de producto requiere body\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.nombre).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});\r",
+									"pm.test(\"Post de producto (el id no puede ser null)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"ADMINISTRADOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/rol/guardar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"rol",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar rol",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Se modificó (no retorna nada)\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"nombre\": \"USUARIO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/rol/8",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"rol",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Respuesta exitosa\", function(){\r",
+									"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/rol/8",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"rol",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Modificar usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Se modificó (no retorna nada)\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"nombre\": \"nombre UsuarioTEST\",\r\n    \"apellido\": \"APELLIDOmodificado\",\r\n    \"email\": \"usuario@test.com\",\r\n    \"contrasenia\": \"test\",\r\n    \"rol\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"ADMINISTRADOR\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/usuario/14",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Respuesta exitosa\", function(){\r",
+									"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/usuario/14",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ciudad",
+			"item": [
+				{
+					"name": "Guardar ciudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Estado 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Post de categorias (requiere body)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson.localidad).to.be.a(\"string\");\t\r",
+									"    pm.expect(responseJson.provincia).to.be.a(\"string\");\r",
+									"\tpm.expect(responseJson.direccion).to.be.a(\"string\");\r",
+									"});\r",
+									"pm.test(\"Post de categorias (el id no puede ser null)\", function(){\r",
+									"    const responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtLmNlY2lsaWEuYWJhdGVAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJBYmF0ZSIsIm5vbWJyZSI6IkNlY2lsaWEiLCJpYXQiOjE2NjM3MzI4MjIsImV4cCI6MTY2MzczNjQyMn0.OeLRubgxlSW3i__Rn7P_lnK-DIU6sS-2_yZHFMm5tM_xKW1Ksol3117n13u1EEhkWfbgSTaHTQd7Ti-bIFabaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"localidad\": \"localidadTEST\",\r\n    \"provincia\": \"provinciaTEST\",\r\n    \"direccion\": \"direccionTEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/ciudad",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"ciudad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

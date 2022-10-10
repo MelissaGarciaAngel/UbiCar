@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "2bb6ec51-9e8a-4369-bcb7-bbd0e14e0dcb",
+		"name": "Categoria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21483001"
+	},
+	"item": [
+		{
+			"name": "Guardar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Estado 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Post de categorias (requiere body)\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"\tpm.expect(responseJson.Categoria.titulo).to.be.a(\"string\");\t\r",
+							"    pm.expect(responseJson.Categoria.descripcion).to.be.a(\"string\");\r",
+							"\tpm.expect(responseJson.Categoria.imagenCategoria.id).to.be.a(\"number\");\r",
+							"});\r",
+							"pm.test(\"Post de categorias (el id no puede ser null)\", function(){\r",
+							"    const responseJson = pm.response.json();\r",
+							"\tpm.expect(responseJson.Categoria.id).to.be.a(\"number\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n   \"titulo\": \"titulo4\", \r\n   \"descripcion\": \"descrip4\", \r\n   \"imagenCategoria\": {\"id\": 1,\r\n                        \"titulo\": \"titulo1\",\r\n                        \"url_img\": \"url1\"}\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categoria/guardar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado OK 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"GetAll de categorias retorna un array (de categorias)\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.a(\"array\");\r",
+							"    pm.expect(responseJson.length).to.be.greaterThan(0);\r",
+							"});\r",
+							"pm.test(\"El primer elemento del array es un id con número\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+							"});\r",
+							"\t\r",
+							"\r",
+							"\r",
+							"\r",
+							"\t\t\t\t"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categoria/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar uno",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+							"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+							" \t\tconst responseJson = pm.response.json();\r",
+							" \t\tpm.expect(responseJson.id).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categoria/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se modificó (no retorna nada)\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"titulo\": \"titulo4\", \r\n    \"descripcion\": \"modificado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categoria/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar id inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No se puede modificar id inexistente\", function(){\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"titulo\": \"titulo100\", \r\n    \"descripcion\": \"modificado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categoria/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar modificado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+							"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"pm.test(\"Se trae correctamente el id pedido\", function(){\r",
+							" \t\tconst responseJson = pm.response.json();\r",
+							" \t\tpm.expect(responseJson.id).to.eql(4);\r",
+							"});\r",
+							"pm.test(\"El campo modificado coincide \", function(){\r",
+							"        const responseJson = pm.response.json();\r",
+							"        pm.expect(responseJson.descripcion).to.eql(\"modificado\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categoria/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Respuesta exitosa\", function(){\r",
+							"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categoria/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar id inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No se puede eliminar id inexistente\", function(){\r",
+							"\t\tpm.expect(pm.response.code).to.be.oneOf([404]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categoria/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

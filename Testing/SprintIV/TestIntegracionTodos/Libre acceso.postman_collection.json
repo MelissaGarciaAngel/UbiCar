@@ -1,0 +1,844 @@
+{
+	"info": {
+		"_postman_id": "83468e54-dff9-4e75-8ca2-1e3dfc666c03",
+		"name": "Libre acceso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21483001"
+	},
+	"item": [
+		{
+			"name": "Ciudad",
+			"item": [
+				{
+					"name": "Listar todas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test para verificar el estado de las respuestas,\r",
+									"\tpm.test(\"Respuesta exitosa\", () => {\r",
+									"\t    pm.expect(pm.response.code).to.be.oneOf([200,201])\r",
+									"\t});\r",
+									"//Tests para verificar el body de la resp recibida\r",
+									"\tpm.test(\"La respuesta trae un array de objetos\", ()=>{\r",
+									"\t  const responseJson = pm.response.json();\r",
+									"\t  pm.expect(responseJson).to.be.an(\"array\");\r",
+									"\t});\r",
+									"\tpm.test(\"El primer objeto del array está completo\",() => {\r",
+									"\t   const responseJson = pm.response.json();\r",
+									"       pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"\t   pm.expect(responseJson[0].localidad).to.be.a(\"string\");\r",
+									"       pm.expect(responseJson[0].provincia).to.be.a(\"string\");\r",
+									"       pm.expect(responseJson[0].direccion).to.be.a(\"string\");\r",
+									"\r",
+									"\t});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/ciudad",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"ciudad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Caracteristica",
+			"item": [
+				{
+					"name": "Listar todas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test para verificar el estado de las respuestas,\r",
+									"\tpm.test(\"Respuesta exitosa\", () => {\r",
+									"\t    pm.expect(pm.response.code).to.be.oneOf([200,201])\r",
+									"\t});\r",
+									"//Tests para verificar el body de la resp recibida\r",
+									"\tpm.test(\"La respuesta trae un array de objetos\", ()=>{\r",
+									"\t  const responseJson = pm.response.json();\r",
+									"\t  pm.expect(responseJson).to.be.an(\"array\");\r",
+									"\t});\r",
+									"\tpm.test(\"El primer objeto del array está completo\",() => {\r",
+									"\t   const responseJson = pm.response.json();\r",
+									"\t   pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"\t   pm.expect(responseJson[0].nombre).to.be.a(\"string\");\r",
+									"\t   pm.expect(responseJson[0].icono).to.be.a(\"string\");\r",
+									"\t   pm.expect(responseJson[0].valor).to.be.a(\"string\");\r",
+									"\t});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/caracteristica/listar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"caracteristica",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar uno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(1);\r",
+									"\t   pm.expect(responseJson.nombre).to.be.a(\"string\");\r",
+									"\t   pm.expect(responseJson.icono).to.be.a(\"string\");\r",
+									"\t   pm.expect(responseJson.valor).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/caracteristica/1",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"caracteristica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Listar todos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado OK 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"GetAll de producto retorna un array (de productos)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.length).to.be.greaterThan(0);\r",
+									"});\r",
+									"pm.test(\"Los datos del primer objeto coinciden con lo esperado\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson[0].titulo).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].descripcion).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].imagen[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].caracteristica[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].politica).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson[0].ciudad.id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].categoria.id).to.be.a(\"number\");\r",
+									"});\r",
+									"\t"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/listar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar uno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(33);\r",
+									"});\r",
+									"pm.test(\"Los datos coinciden con lo esperado\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.titulo).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.descripcion).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.imagen[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson.caracteristica[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson.politica).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.ciudad.id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson.categoria.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/33",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"33"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar productos por ciudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson[0].ciudad.id).to.eql(1);\r",
+									"});\r",
+									"pm.test(\"La respuesta trae un array de objetos\", ()=>{\r",
+									"\t    const responseJson = pm.response.json();\r",
+									"\t\tpm.expect(responseJson).to.be.an(\"array\");\r",
+									"}); \r",
+									"pm.test(\"Los datos coinciden con lo esperado\", function () {\r",
+									"    const responseJson = pm.response.json();    \r",
+									"    pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].titulo).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].descripcion).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].imagen[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].caracteristica[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].politica).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson[0].ciudad.id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].categoria.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/ciudad/1",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"ciudad",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar producto por categoria",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Respuesta exitosa\", () => {\r",
+									"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"\t});\r",
+									"pm.test(\"La respuesta trae un array de objetos\", ()=>{\r",
+									"\tconst responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson).to.be.an(\"array\");\r",
+									"\t});\r",
+									"pm.test(\"El primer objeto del array está completo\",()=>{\r",
+									"\tconst responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"\t});\r",
+									"pm.test(\"Los datos consultados del primer objeto son del tipo esperado\", ()=>{\r",
+									"\tconst responseJson = pm.response.json();\r",
+									"\tpm.expect(responseJson[0].titulo).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].descripcion).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].imagen[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].caracteristica[0].id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].politica).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson[0].ciudad.id).to.be.a(\"number\");\r",
+									"    pm.expect(responseJson[0].categoria.id).to.be.a(\"number\");\r",
+									"});\t\t\t\t\t\t"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/producto/categoria/1",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"categoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reserva",
+			"item": [
+				{
+					"name": "Filtrar reserva por producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado OK 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"El id no puede ser null\", ()=> {\r",
+									"\t      const responseJson = pm.response.json();\r",
+									"\t      pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"});\r",
+									"\t"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/reserva/producto/1",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"reserva",
+								"producto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar reserva por usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado OK 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"El id no puede ser null\", ()=> {\r",
+									"\t      const responseJson = pm.response.json();\r",
+									"\t      pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"});\r",
+									"\t"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/reserva/usuario/4",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"reserva",
+								"usuario",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rol",
+			"item": [
+				{
+					"name": "Listar todos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado OK 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"GetAll de producto retorna un array (de productos)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.length).to.be.greaterThan(0);\r",
+									"});\r",
+									"pm.test(\"Los datos del primer objeto coinciden con lo esperado\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson[0].nombre).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"});\r",
+									"\t\r",
+									"\t"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/rol/listar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"rol",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar uno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(2);\r",
+									"});\r",
+									"pm.test(\"Los datos coinciden con lo esperado\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.nombre).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/rol/2",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"rol",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Listar todos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado OK 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"GetAll de categorias retorna un array (de categorias)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.a(\"array\");\r",
+									"    pm.expect(responseJson.length).to.be.greaterThan(0);\r",
+									"});\r",
+									"pm.test(\"El primer elemento del array es un id con número\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson[0].id).to.be.a(\"number\");\r",
+									"});\r",
+									"\t\r",
+									"\r",
+									"\r",
+									"\r",
+									"\t\t\t\t"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/listar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar uno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(4);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/categoria/4",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"categoria",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Listar uno",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+									"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+									" \t\tconst responseJson = pm.response.json();\r",
+									" \t\tpm.expect(responseJson.id).to.eql(5);\r",
+									"});\r",
+									"pm.test(\"Los datos coinciden con lo esperado\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.nombre).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.apellido).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.email).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.contrasenia).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.rol).to.be.a(\"object\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://18.223.117.95:8080/usuario/5",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar USUARIO",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Post de producto requiere body\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.nombre).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.apellido).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.email).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.contrasenia).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.rol).to.be.a(\"object\");\r",
+									"});\r",
+									"pm.test(\"Post de producto (el id no puede ser null)\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.id).to.be.a(\"number\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"nombre UsuarioTEST\",\r\n    \"apellido\": \"Apellido UsuarioTEST\",\r\n    \"email\": \"usuario@test.com\",\r\n    \"contrasenia\": \"test\",\r\n    \"rol\": {\r\n        \"id\": 2,\r\n        \"nombre\": \"USUARIO\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/usuario/guardar",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST para token ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verifica el estado ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"devuelve autorizacion\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.respuesta.token).to.be.a(\"string\");\r",
+									"    pm.expect(responseJson.respuesta.authorities[0].authority).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usuario@test.com\",\r\n    \"contrasenia\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.223.117.95:8080/auth/token",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"117",
+								"95"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

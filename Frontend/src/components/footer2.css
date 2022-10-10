@@ -1,0 +1,183 @@
+.footerInfo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.footerContent{
+    display: flex;
+    direction: row;
+    background-color: #E5E5E5;
+    width: 100%;
+    padding: 2%;
+    justify-content: space-around;
+}
+@media(max-width: 430px) {
+  .footerContent{
+    padding: 0;
+  }
+}
+
+.footerLogo{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+    min-width: 46%;
+    justify-content: center;
+}
+
+.imgLogo{
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: underline;
+    padding: 0;
+    line-height: 140%;
+    font-size: small;
+}
+
+p{
+    font-size: smaller; 
+}
+
+h3 {
+    display: block;
+    font-size: 1em;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.containerImg{
+    min-height: 50vw;
+    position: relative;
+    background-color: #20427f;
+    background-image: url("https://ubicarbd.s3.us-east-2.amazonaws.com/util/FondoBanner.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.redCar{
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.iconsFooter{
+    display: flex;
+    justify-content: space-around;
+}
+
+.linksIz{
+    padding-left: 2%;
+}
+
+
+
+
+/*.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "banner"
+        "footer";
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "logo links";
+    grid-area: footer;
+}
+
+.logo {
+    grid-area: logo;
+    background-color: white;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "politicas productosRedes";
+    grid-area: links;
+    background-color: #E5E5E5;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.politicas {
+    grid-area: politicas;
+}
+
+.productosRedes {
+    grid-area: productosRedes;
+}
+
+.iconsRedes{
+    justify-content: space-evenly;
+    padding: 5%;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: underline;
+    padding: 0;
+    line-height: 140%;
+}
+
+.banner {
+    grid-area: 1 / 1 / 2 / 3;
+    min-height: 50vw;
+    position: relative;
+    background-color: steelblue;
+    background-image: url("https://ubicarbd.s3.us-east-2.amazonaws.com/util/BannerFondo.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+
+
+.redCar {
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}*/

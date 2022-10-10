@@ -1,0 +1,42 @@
+variables:
+   AWS_ACCESS_KEY_ID: "$AWS_ACCESS_KEY_ID"
+   AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+   S3_BUCKET_NAME: $S3_BUCKET_NAME
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  image: node:14.15.0
+  stage: build
+  before_script:
+    - cd ./integrador
+  script: 
+    - npm install
+    - CI=false npm run-script build
+    - pwd && ls -la
+#    - rm -rf public
+#    - mv build public
+  artifacts:
+   paths:
+     - /builds/ctd/proyecto-integrador-0822/1021-ft/grupo-10/integrador/build/*
+
+deploy: 
+  image: python:latest
+  stage: deploy
+  before_script:
+    - cd ./integrador
+  script:
+    - pwd && ls -la
+    - pip install awscli
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws s3 sync /builds/ctd/proyecto-integrador-0822/1021-ft/grupo-10/integrador/build s3://$S3_BUCKET_NAME 
+
+
+

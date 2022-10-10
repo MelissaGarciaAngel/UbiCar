@@ -1,0 +1,688 @@
+{
+	"id": "4ec4d2d2-d801-417c-81cd-524173e7c008",
+	"name": "Libre acceso",
+	"timestamp": "2022-09-21T03:11:55.249Z",
+	"collection_id": "21483001-83468e54-dff9-4e75-8ca2-1e3dfc666c03",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 45,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "00819faf-152f-4779-81eb-4c827dda7ed4",
+			"name": "Listar todas",
+			"url": "http://18.223.117.95:8080/ciudad",
+			"time": 267,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true,
+				"La respuesta trae un array de objetos": true,
+				"El primer objeto del array está completo": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				},
+				"La respuesta trae un array de objetos": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El primer objeto del array está completo": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				267
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true,
+					"La respuesta trae un array de objetos": true,
+					"El primer objeto del array está completo": true
+				}
+			]
+		},
+		{
+			"id": "dd745ed1-0096-4aed-a4c3-a0e2ab7e082e",
+			"name": "Listar todas",
+			"url": "http://18.223.117.95:8080/caracteristica/listar",
+			"time": 235,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true,
+				"La respuesta trae un array de objetos": true,
+				"El primer objeto del array está completo": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				},
+				"La respuesta trae un array de objetos": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El primer objeto del array está completo": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true,
+					"La respuesta trae un array de objetos": true,
+					"El primer objeto del array está completo": true
+				}
+			]
+		},
+		{
+			"id": "ae7f51d8-4ce8-4a38-aad7-d6040f3ba91e",
+			"name": "Listar uno",
+			"url": "http://18.223.117.95:8080/caracteristica/1",
+			"time": 193,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true
+				}
+			]
+		},
+		{
+			"id": "7053ed72-68c5-4175-b1d0-2156a09f1cee",
+			"name": "Listar todos",
+			"url": "http://18.223.117.95:8080/producto/listar",
+			"time": 1877,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"GetAll de producto retorna un array (de productos)": true,
+				"Los datos del primer objeto coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"GetAll de producto retorna un array (de productos)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos del primer objeto coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1877
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"GetAll de producto retorna un array (de productos)": true,
+					"Los datos del primer objeto coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "7f2262a3-7603-403f-b74b-f0944d82ea4d",
+			"name": "Listar uno",
+			"url": "http://18.223.117.95:8080/producto/33",
+			"time": 454,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true,
+				"Los datos coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				454
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true,
+					"Los datos coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "4c1013b4-2e12-40cf-8ff0-66475c1b76fc",
+			"name": "Filtrar productos por ciudad",
+			"url": "http://18.223.117.95:8080/producto/ciudad/1",
+			"time": 1386,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true,
+				"La respuesta trae un array de objetos": true,
+				"Los datos coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"La respuesta trae un array de objetos": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1386
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true,
+					"La respuesta trae un array de objetos": true,
+					"Los datos coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "3c593f53-d139-4003-8881-581f57f145dc",
+			"name": "Filtrar producto por categoria",
+			"url": "http://18.223.117.95:8080/producto/categoria/1",
+			"time": 1094,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true,
+				"La respuesta trae un array de objetos": true,
+				"El primer objeto del array está completo": true,
+				"Los datos consultados del primer objeto son del tipo esperado": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				},
+				"La respuesta trae un array de objetos": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El primer objeto del array está completo": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos consultados del primer objeto son del tipo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1094
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true,
+					"La respuesta trae un array de objetos": true,
+					"El primer objeto del array está completo": true,
+					"Los datos consultados del primer objeto son del tipo esperado": true
+				}
+			]
+		},
+		{
+			"id": "ef33ad74-0a50-48e6-80d7-362e0781da52",
+			"name": "Filtrar reserva por producto",
+			"url": "http://18.223.117.95:8080/reserva/producto/1",
+			"time": 339,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"El id no puede ser null": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El id no puede ser null": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				339
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"El id no puede ser null": true
+				}
+			]
+		},
+		{
+			"id": "1af95b9c-d72d-45e3-9e46-c5adfa0af9fd",
+			"name": "Filtrar reserva por usuario",
+			"url": "http://18.223.117.95:8080/reserva/usuario/4",
+			"time": 292,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"El id no puede ser null": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El id no puede ser null": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				292
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"El id no puede ser null": true
+				}
+			]
+		},
+		{
+			"id": "bcb9a243-bd71-484a-939b-47ecb714c277",
+			"name": "Listar todos",
+			"url": "http://18.223.117.95:8080/rol/listar",
+			"time": 305,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"GetAll de producto retorna un array (de productos)": true,
+				"Los datos del primer objeto coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"GetAll de producto retorna un array (de productos)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos del primer objeto coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				305
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"GetAll de producto retorna un array (de productos)": true,
+					"Los datos del primer objeto coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "ac4c7ce7-da60-43e9-b762-f0406fb3938b",
+			"name": "Listar uno",
+			"url": "http://18.223.117.95:8080/rol/2",
+			"time": 222,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true,
+				"Los datos coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				222
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true,
+					"Los datos coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "ee19e102-8ae2-463d-b8ae-1d5549706288",
+			"name": "Listar todos",
+			"url": "http://18.223.117.95:8080/categoria/listar",
+			"time": 321,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"GetAll de categorias retorna un array (de categorias)": true,
+				"El primer elemento del array es un id con número": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"GetAll de categorias retorna un array (de categorias)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El primer elemento del array es un id con número": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				321
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"GetAll de categorias retorna un array (de categorias)": true,
+					"El primer elemento del array es un id con número": true
+				}
+			]
+		},
+		{
+			"id": "ac739cdf-9964-494c-999a-309634a1fa4c",
+			"name": "Listar uno",
+			"url": "http://18.223.117.95:8080/categoria/4",
+			"time": 220,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				220
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true
+				}
+			]
+		},
+		{
+			"id": "c1a0553a-472a-4e5e-b9f4-6686d35f78e0",
+			"name": "Listar uno",
+			"url": "http://18.223.117.95:8080/usuario/5",
+			"time": 223,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true,
+				"Los datos coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				223
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true,
+					"Los datos coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "b1bea297-bdf9-438f-801b-edac26b3bb6e",
+			"name": "Guardar USUARIO",
+			"url": "http://18.223.117.95:8080/usuario/guardar",
+			"time": 2713,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado ok": true,
+				"Post de producto requiere body": true,
+				"Post de producto (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado ok": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto requiere body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2713
+			],
+			"allTests": [
+				{
+					"Verifica el estado ok": true,
+					"Post de producto requiere body": true,
+					"Post de producto (el id no puede ser null)": true
+				}
+			]
+		},
+		{
+			"id": "ca4a664f-bff0-48db-b32c-b8bddb6f5728",
+			"name": "POST para token ",
+			"url": "http://18.223.117.95:8080/auth/token",
+			"time": 454,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado ok": true,
+				"devuelve autorizacion": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado ok": {
+					"pass": 1,
+					"fail": 0
+				},
+				"devuelve autorizacion": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				454
+			],
+			"allTests": [
+				{
+					"Verifica el estado ok": true,
+					"devuelve autorizacion": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 10595,
+	"collection": {
+		"requests": [
+			{
+				"id": "00819faf-152f-4779-81eb-4c827dda7ed4",
+				"method": "GET"
+			},
+			{
+				"id": "dd745ed1-0096-4aed-a4c3-a0e2ab7e082e",
+				"method": "GET"
+			},
+			{
+				"id": "ae7f51d8-4ce8-4a38-aad7-d6040f3ba91e",
+				"method": "GET"
+			},
+			{
+				"id": "7053ed72-68c5-4175-b1d0-2156a09f1cee",
+				"method": "GET"
+			},
+			{
+				"id": "7f2262a3-7603-403f-b74b-f0944d82ea4d",
+				"method": "GET"
+			},
+			{
+				"id": "4c1013b4-2e12-40cf-8ff0-66475c1b76fc",
+				"method": "GET"
+			},
+			{
+				"id": "3c593f53-d139-4003-8881-581f57f145dc",
+				"method": "GET"
+			},
+			{
+				"id": "ef33ad74-0a50-48e6-80d7-362e0781da52",
+				"method": "GET"
+			},
+			{
+				"id": "1af95b9c-d72d-45e3-9e46-c5adfa0af9fd",
+				"method": "GET"
+			},
+			{
+				"id": "bcb9a243-bd71-484a-939b-47ecb714c277",
+				"method": "GET"
+			},
+			{
+				"id": "ac4c7ce7-da60-43e9-b762-f0406fb3938b",
+				"method": "GET"
+			},
+			{
+				"id": "ee19e102-8ae2-463d-b8ae-1d5549706288",
+				"method": "GET"
+			},
+			{
+				"id": "ac739cdf-9964-494c-999a-309634a1fa4c",
+				"method": "GET"
+			},
+			{
+				"id": "c1a0553a-472a-4e5e-b9f4-6686d35f78e0",
+				"method": "GET"
+			},
+			{
+				"id": "b1bea297-bdf9-438f-801b-edac26b3bb6e",
+				"method": "POST"
+			},
+			{
+				"id": "ca4a664f-bff0-48db-b32c-b8bddb6f5728",
+				"method": "POST"
+			}
+		]
+	}
+}

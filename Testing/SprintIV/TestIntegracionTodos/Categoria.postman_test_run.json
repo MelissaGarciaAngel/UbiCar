@@ -1,0 +1,308 @@
+{
+	"id": "2e059800-5c5b-4883-b9a9-83427166d643",
+	"name": "Categoria",
+	"timestamp": "2022-08-22T22:06:55.432Z",
+	"collection_id": "21483001-2bb6ec51-9e8a-4369-bcb7-bbd0e14e0dcb",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 15,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "e56c9048-7c9d-476b-bf0e-573dee9ecf1f",
+			"name": "Guardar",
+			"url": "http://localhost:8080/categoria/guardar",
+			"time": 286,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Estado 200": true,
+				"Post de categorias (requiere body)": true,
+				"Post de categorias (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Estado 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de categorias (requiere body)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de categorias (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				286
+			],
+			"allTests": [
+				{
+					"Estado 200": true,
+					"Post de categorias (requiere body)": true,
+					"Post de categorias (el id no puede ser null)": true
+				}
+			]
+		},
+		{
+			"id": "b39d3aa4-8b63-49e8-97cf-b9820df46061",
+			"name": "Listar todos",
+			"url": "http://localhost:8080/categoria/listar",
+			"time": 50,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"GetAll de categorias retorna un array (de categorias)": true,
+				"El primer elemento del array es un id con número": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"GetAll de categorias retorna un array (de categorias)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El primer elemento del array es un id con número": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"GetAll de categorias retorna un array (de categorias)": true,
+					"El primer elemento del array es un id con número": true
+				}
+			]
+		},
+		{
+			"id": "6691abc0-50f8-4288-a791-dd7888e59900",
+			"name": "Listar uno",
+			"url": "http://localhost:8080/categoria/2",
+			"time": 31,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				31
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true
+				}
+			]
+		},
+		{
+			"id": "df16fcf7-48b7-46dd-ad81-ef9f9eff7f8d",
+			"name": "Modificar",
+			"url": "http://localhost:8080/categoria/4",
+			"time": 147,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Se modificó (no retorna nada)": true
+			},
+			"testPassFailCounts": {
+				"Se modificó (no retorna nada)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				147
+			],
+			"allTests": [
+				{
+					"Se modificó (no retorna nada)": true
+				}
+			]
+		},
+		{
+			"id": "2c538728-711b-4e9b-a149-39975969e96c",
+			"name": "Modificar id inexistente",
+			"url": "http://localhost:8080/categoria/100",
+			"time": 29,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede modificar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede modificar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				29
+			],
+			"allTests": [
+				{
+					"No se puede modificar id inexistente": true
+				}
+			]
+		},
+		{
+			"id": "c3b727e0-4cb4-49db-bd20-3839b2c9fdca",
+			"name": "Listar modificado",
+			"url": "http://localhost:8080/categoria/4",
+			"time": 22,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				"Se trae correctamente el id pedido": true,
+				"El campo modificado coincide ": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El campo modificado coincide ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				22
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					"Se trae correctamente el id pedido": true,
+					"El campo modificado coincide ": true
+				}
+			]
+		},
+		{
+			"id": "3f3fc032-a5c2-4d20-8bcc-66c17f667265",
+			"name": "Eliminar",
+			"url": "http://localhost:8080/categoria/4",
+			"time": 96,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				96
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true
+				}
+			]
+		},
+		{
+			"id": "fa68f556-b7cd-415b-93f7-e90678f3d923",
+			"name": "Eliminar id inexistente",
+			"url": "http://localhost:8080/categoria/4",
+			"time": 16,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede eliminar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede eliminar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"No se puede eliminar id inexistente": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 677,
+	"collection": {
+		"requests": [
+			{
+				"id": "e56c9048-7c9d-476b-bf0e-573dee9ecf1f",
+				"method": "POST"
+			},
+			{
+				"id": "b39d3aa4-8b63-49e8-97cf-b9820df46061",
+				"method": "GET"
+			},
+			{
+				"id": "6691abc0-50f8-4288-a791-dd7888e59900",
+				"method": "GET"
+			},
+			{
+				"id": "df16fcf7-48b7-46dd-ad81-ef9f9eff7f8d",
+				"method": "PUT"
+			},
+			{
+				"id": "2c538728-711b-4e9b-a149-39975969e96c",
+				"method": "PUT"
+			},
+			{
+				"id": "c3b727e0-4cb4-49db-bd20-3839b2c9fdca",
+				"method": "GET"
+			},
+			{
+				"id": "3f3fc032-a5c2-4d20-8bcc-66c17f667265",
+				"method": "DELETE"
+			},
+			{
+				"id": "fa68f556-b7cd-415b-93f7-e90678f3d923",
+				"method": "DELETE"
+			}
+		]
+	}
+}

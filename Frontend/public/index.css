@@ -1,0 +1,16 @@
+*{
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+h1, h2, h3, h4{
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}

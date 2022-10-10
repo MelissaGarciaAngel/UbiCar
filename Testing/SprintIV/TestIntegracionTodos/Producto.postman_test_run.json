@@ -1,0 +1,314 @@
+{
+	"id": "3cf679b6-1e08-48cc-957d-a059b4c4dd62",
+	"name": "Producto",
+	"timestamp": "2022-08-24T05:56:02.808Z",
+	"collection_id": "21483001-c0005bc0-027f-427c-9747-3e226c39ee8e",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 16,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6e1e4606-e443-4926-80ee-ac8961e1c749",
+			"name": "Guardar",
+			"url": "http://localhost:8080/producto",
+			"time": 225,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado ok": true,
+				"Post de producto requiere body": true,
+				"Post de producto (el id no puede ser null)": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado ok": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto requiere body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post de producto (el id no puede ser null)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				225
+			],
+			"allTests": [
+				{
+					"Verifica el estado ok": true,
+					"Post de producto requiere body": true,
+					"Post de producto (el id no puede ser null)": true
+				}
+			]
+		},
+		{
+			"id": "084d48dd-8eca-4c64-9611-588afaa14c0f",
+			"name": "Listar todos",
+			"url": "http://localhost:8080/producto",
+			"time": 319,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado OK 200": true,
+				"GetAll de producto retorna un array (de productos)": true,
+				"Los datos del primer objeto coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado OK 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"GetAll de producto retorna un array (de productos)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos del primer objeto coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				319
+			],
+			"allTests": [
+				{
+					"Verifica el estado OK 200": true,
+					"GetAll de producto retorna un array (de productos)": true,
+					"Los datos del primer objeto coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "db248951-3bd8-4a20-af5b-724f166086fc",
+			"name": "Listar uno",
+			"url": "http://localhost:8080/producto/2",
+			"time": 53,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				" Se trae correctamente el id pedido": true,
+				"Los datos coinciden con lo esperado": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				" Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Los datos coinciden con lo esperado": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				53
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					" Se trae correctamente el id pedido": true,
+					"Los datos coinciden con lo esperado": true
+				}
+			]
+		},
+		{
+			"id": "11f3d372-ac8b-44c9-b435-0e6703eedaef",
+			"name": "Modificar",
+			"url": "http://localhost:8080/producto/2",
+			"time": 441,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Se modificó (no retorna nada)": true
+			},
+			"testPassFailCounts": {
+				"Se modificó (no retorna nada)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				441
+			],
+			"allTests": [
+				{
+					"Se modificó (no retorna nada)": true
+				}
+			]
+		},
+		{
+			"id": "bed27a62-76fb-43ed-8ab3-4fafce524114",
+			"name": "Modificar id inexistente",
+			"url": "http://localhost:8080/producto/100",
+			"time": 18,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede modificar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede modificar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"No se puede modificar id inexistente": true
+				}
+			]
+		},
+		{
+			"id": "33a67192-56e8-4433-bd0e-51a1ed2cac01",
+			"name": "Listar modificado",
+			"url": "http://localhost:8080/producto/2",
+			"time": 33,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verifica el estado exitoso OK": true,
+				"Se trae correctamente el id pedido": true,
+				"El campo modificado coincide ": true
+			},
+			"testPassFailCounts": {
+				"Verifica el estado exitoso OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Se trae correctamente el id pedido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"El campo modificado coincide ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				33
+			],
+			"allTests": [
+				{
+					"Verifica el estado exitoso OK": true,
+					"Se trae correctamente el id pedido": true,
+					"El campo modificado coincide ": true
+				}
+			]
+		},
+		{
+			"id": "d8a8f1b5-8f77-4ab7-939b-5981ab0e14ca",
+			"name": "Eliminar",
+			"url": "http://localhost:8080/producto/2",
+			"time": 152,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Respuesta exitosa": true
+			},
+			"testPassFailCounts": {
+				"Respuesta exitosa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				152
+			],
+			"allTests": [
+				{
+					"Respuesta exitosa": true
+				}
+			]
+		},
+		{
+			"id": "81ec0d2f-37e7-4c50-8305-3de981cad132",
+			"name": "Eliminar id inexistente",
+			"url": "http://localhost:8080/producto/2",
+			"time": 22,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"No se puede eliminar id inexistente": true
+			},
+			"testPassFailCounts": {
+				"No se puede eliminar id inexistente": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				22
+			],
+			"allTests": [
+				{
+					"No se puede eliminar id inexistente": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1263,
+	"collection": {
+		"requests": [
+			{
+				"id": "6e1e4606-e443-4926-80ee-ac8961e1c749",
+				"method": "POST"
+			},
+			{
+				"id": "084d48dd-8eca-4c64-9611-588afaa14c0f",
+				"method": "GET"
+			},
+			{
+				"id": "db248951-3bd8-4a20-af5b-724f166086fc",
+				"method": "GET"
+			},
+			{
+				"id": "11f3d372-ac8b-44c9-b435-0e6703eedaef",
+				"method": "PUT"
+			},
+			{
+				"id": "bed27a62-76fb-43ed-8ab3-4fafce524114",
+				"method": "PUT"
+			},
+			{
+				"id": "33a67192-56e8-4433-bd0e-51a1ed2cac01",
+				"method": "GET"
+			},
+			{
+				"id": "d8a8f1b5-8f77-4ab7-939b-5981ab0e14ca",
+				"method": "DELETE"
+			},
+			{
+				"id": "81ec0d2f-37e7-4c50-8305-3de981cad132",
+				"method": "DELETE"
+			}
+		]
+	}
+}

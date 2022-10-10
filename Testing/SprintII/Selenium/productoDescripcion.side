@@ -1,0 +1,286 @@
+{
+  "id": "518a62a0-ae08-4c88-a2ad-87da4ee91c3b",
+  "version": "2.0",
+  "name": "ubicar",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "b8d5ab0f-2698-463c-adf4-3d80622a496b",
+    "name": "producto",
+    "commands": [{
+      "id": "32647074-da2f-4ff6-b8ca-3a374115440f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bc32fb39-10a8-4a7a-bdaa-0213c07b8670",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f99ac59f-f7cc-45f7-8e8b-01d5171f70fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-hHLeRK:nth-child(7) .sc-ivTmOn",
+      "targets": [
+        ["css=.sc-hHLeRK:nth-child(7) .sc-ivTmOn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div/div[7]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e3887d9-4540-411f-b7da-59d8ab59530f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.main-image > img",
+      "targets": [
+        ["css=.main-image > img", "css:finder"],
+        ["xpath=//img[@alt='product']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/img", "xpath:idRelative"],
+        ["xpath=//div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7880161-b88b-4e75-9ef2-ef8884510a33",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-jfmDQi",
+      "targets": [
+        ["css=.sc-jfmDQi", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'>')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c63472d-5baa-44dd-95be-8fc5cf258e23",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-jfmDQi",
+      "targets": [
+        ["css=.sc-jfmDQi", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'>')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce2c9678-0372-4617-93ac-53fbd4f48bac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-jfmDQi",
+      "targets": [
+        ["css=.sc-jfmDQi", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'>')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "190411ba-fd08-4628-a9a9-3a4b7130b2fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-jfmDQi",
+      "targets": [
+        ["css=.sc-jfmDQi", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'>')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc4bb315-f06d-4c36-b709-bdb002d19012",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-iNWwEs",
+      "targets": [
+        ["css=.sc-iNWwEs", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'X')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d55dfec8-7f03-4225-984b-bc0f39a810ea",
+    "name": "productoDescripcion",
+    "commands": [{
+      "id": "3e55d25b-9839-40a0-a202-431f33c1009e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4878bdec-4b83-4409-8376-128e803c7ba5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35ce6dad-8e61-4821-97c6-96da48e716dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-hHLeRK:nth-child(2) .sc-ivTmOn",
+      "targets": [
+        ["css=.sc-hHLeRK:nth-child(2) .sc-ivTmOn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "192203ae-0bb1-4ea3-a662-1dc4d2ef901c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-iAvgwm",
+      "targets": [
+        ["css=.sc-iAvgwm", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "263c1745-f0b5-4730-ab29-5f73f0eaf80d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-iAvgwm > p",
+      "targets": [
+        ["css=.sc-iAvgwm > p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/p", "xpath:idRelative"],
+        ["xpath=//div[3]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Rentar un Renault Zoe te permite disfrutar un automóvil 100% Eléctrico, cuenta con una bateria de iones de litio con celdas de LG Chem, va situada debajo del habitaculo y refrigerada por aire (refrigeración pasiva), el conector \"Camaleón\" se adapta a diferentes intensidades y potencias disponibles, tanto en monofásico como en trifásico. En una carga semi rápida a 50W se puede conseguir 150 Km de autonomía en 30 minutos, obtener una carga al 80% en aproxímadamente 1 hora y media, en la conexión habitual en los hogares que es de menor potencia le tomará aproxímadamente 10 horas para obtener una carga al 100%.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f1212ac-99e4-4fe3-bbbb-af95acfbd028",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-iAvgwm",
+      "targets": [
+        ["css=.sc-iAvgwm", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "424d8bfd-b5bc-4ddc-90c6-4dc6df41725f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-iAvgwm",
+      "targets": [
+        ["css=.sc-iAvgwm", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50be5d70-68f0-4e03-a9f0-ee5bf2aed1ad",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-cCsOjp",
+      "targets": [
+        ["css=.sc-cCsOjp", "css:finder"],
+        ["xpath=//div[@id='root']/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08e1da0d-5007-42ed-83b6-659a0b600a4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-efBctP",
+      "targets": [
+        ["css=.sc-efBctP", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eeada6d9-cbcd-4bdf-aad1-ca0fe396ef56",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-efBctP p:nth-child(2)",
+      "targets": [
+        ["css=.sc-efBctP p:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'televisor')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec2dbe89-cc85-4f67-8531-d4c3ba6a3014",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) > p:nth-child(1)",
+      "targets": [
+        ["css=div:nth-child(2) > p:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]/div/p", "xpath:idRelative"],
+        ["xpath=//div[4]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'cocina')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17b86793-55b5-495a-8ecc-fd3ab6d310ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]/div/p[5]", "xpath:idRelative"],
+        ["xpath=//p[5]", "xpath:position"],
+        ["xpath=//p[contains(.,'pileta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95356a8b-7489-4f8f-99f2-d173b16e9a6f",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(6)",
+      "targets": [
+        ["css=p:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]/div/p[6]", "xpath:idRelative"],
+        ["xpath=//p[6]", "xpath:position"],
+        ["xpath=//p[contains(.,'wifi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fc14310-fc78-4ccf-824a-d40dd0dd1530",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-efBctP p:nth-child(3)",
+      "targets": [
+        ["css=.sc-efBctP p:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]/div/p[3]", "xpath:idRelative"],
+        ["xpath=//p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'aire acondicionado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ff39819-9a04-4c2c-b41f-7d86762b1167",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-efBctP p:nth-child(4)",
+      "targets": [
+        ["css=.sc-efBctP p:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[4]/div/p[4]", "xpath:idRelative"],
+        ["xpath=//p[4]", "xpath:position"],
+        ["xpath=//p[contains(.,'parking')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ffbd39f0-5ad8-4ef4-afbd-4165342adcfe",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b8d5ab0f-2698-463c-adf4-3d80622a496b"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

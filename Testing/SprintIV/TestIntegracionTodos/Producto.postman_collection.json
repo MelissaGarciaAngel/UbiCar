@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "c0005bc0-027f-427c-9747-3e226c39ee8e",
+		"name": "Producto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21483001"
+	},
+	"item": [
+		{
+			"name": "Guardar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Post de producto requiere body\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.titulo).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson.descripcion).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson.imagen[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.caracteristica[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.politica[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.ciudad.id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.categoria.id).to.be.a(\"number\");\r",
+							"});\r",
+							"pm.test(\"Post de producto (el id no puede ser null)\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.id).to.be.a(\"number\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"titulo\": \"titulo1\", \r\n    \"descripcion\": \"descrip1\",\r\n    \"imagen\": [\r\n                    {\"id\": 1,\r\n                    \"titulo\": \"titulo\",\r\n                    \"urlImg\": \"url\"},\r\n                    {\"id\": 2,\r\n                    \"titulo\": \"titulo2\",\r\n                    \"urlImg\": \"url2\"}\r\n                 ],\r\n    \"caracteristica\": [\r\n                        {\"id\": 1,\r\n                        \"icono\": \"icono\",\r\n                        \"nombre\": \"nombre\"},\r\n                        {\"id\": 2,\r\n                        \"icono\": \"icono2\",\r\n                        \"nombre\": \"nombre2\"}\r\n                      ],\r\n    \"politica\": [\r\n                  {\"id\": 1,\r\n                  \"descripcion\": \"desc\",\r\n                  \"titulo\": \"titulo\"},\r\n                  {\"id\": 2,\r\n                  \"descripcion\": \"desc2\",\r\n                  \"titulo\": \"titulo2\"}\r\n                ],\r\n    \"ciudad\": {\"id\":1,\r\n                \"localidad\": \"localidad\",\r\n                \"provincia\": \"prov\"}, \r\n    \"categoria\":{\"id\": 1,\r\n                \"titulo\": \"titulo\",\r\n                \"descripcion\": \"descrip\",\r\n                \"imagenCategoria\": {\r\n                                    \"id\": 1,\r\n                                    \"titulo\": \"titulo1\",\r\n                                    \"urlImg\": \"url1\"\r\n        }                           }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/producto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado OK 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"GetAll de producto retorna un array (de productos)\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.a(\"array\");\r",
+							"    pm.expect(responseJson.length).to.be.greaterThan(0);\r",
+							"});\r",
+							"pm.test(\"Los datos del primer objeto coinciden con lo esperado\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson[0].titulo).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson[0].descripcion).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson[0].imagen[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson[0].caracteristica[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson[0].politica[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson[0].ciudad.id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson[0].categoria.id).to.be.a(\"number\");\r",
+							"});\r",
+							"\t"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/producto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar uno",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+							"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"pm.test(\" Se trae correctamente el id pedido\", function(){\r",
+							" \t\tconst responseJson = pm.response.json();\r",
+							" \t\tpm.expect(responseJson.id).to.eql(2);\r",
+							"});\r",
+							"pm.test(\"Los datos coinciden con lo esperado\", function () {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.titulo).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson.descripcion).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson.imagen[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.caracteristica[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.politica[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.ciudad.id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.categoria.id).to.be.a(\"number\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/producto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se modificó (no retorna nada)\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\": 2,\r\n    \"titulo\": \"titulo2MODIFICADO\",\r\n    \"descripcion\": \"descrip2MODIFICADA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/producto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar id inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No se puede modificar id inexistente\", function(){\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\": 100,\r\n    \"titulo\": \"a\",\r\n    \"descripcion\": \"a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/producto/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar modificado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verifica el estado exitoso OK\", function(){\r",
+							"\t\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"pm.test(\"Se trae correctamente el id pedido\", function(){\r",
+							" \t\tconst responseJson = pm.response.json();\r",
+							" \t\tpm.expect(responseJson.id).to.eql(2);\r",
+							"});\r",
+							"pm.test(\"El campo modificado coincide \", function(){\r",
+							"        const responseJson = pm.response.json();\r",
+							"        pm.expect(responseJson.descripcion).to.eql(\"descrip2MODIFICADA\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/producto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Respuesta exitosa\", function(){\r",
+							"\tpm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/producto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar id inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No se puede eliminar id inexistente\", function(){\r",
+							"\t\tpm.expect(pm.response.code).to.be.oneOf([404]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/producto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"producto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
